@@ -78,12 +78,11 @@ void myfree(void * free_memory){
 }
 
 /*void print_free(){
-	//printf("HEad_pointer%p\n",free_head);
 	struct mem_block * temp_blk=free_head;
 	while(temp_blk!=NULL){
 		printf("Node  %p \tNext  %p \tPrev  %p \tsize- %d\n",temp_blk,temp_blk->next,temp_blk->prev,temp_blk->size);
 		temp_blk=temp_blk->next;
-	}printf("\n\n");
+	}printf("\n");
 }*/
 
 void * mymalloc(int size){
@@ -118,24 +117,3 @@ void * mymalloc(int size){
 	temp_blk->block= (unsigned char *)temp_blk + mem_block_size;
 	return temp_blk->block;
 }
-
-/*int main(){
-	init();
-	print_free();
-	char * a=(char *)mymalloc(512);
-	print_free();
-	char * b=(char *)mymalloc(512);
-	print_free();
-	char * c=(char *)mymalloc(512);
-	print_free();
-	char * d=(char *)mymalloc(512);
-	print_free();
-	myfree(c);
-	print_free();
-	myfree(d);
-	print_free();
-	myfree(a);
-	print_free();
-	myfree(b);
-	print_free();
-}*/
